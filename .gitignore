@@ -1,0 +1,21 @@
+# Code: MIT. Input pack, show content and raw outputs are Kuku's; do not redistribute.
+__pycache__/
+*.pyc
+.venv/
+input/I Married a Broken Soldier*/
+input/*.zip
+models/
+*.egg-info/
+.pytest_cache/
+
+# pack-derived text is never committed
+parsed_output/
+context_output/
+retrieval_output/
+judge_output/
+*.npz
+
+# local run artifacts
+*.tmp
+judge_cache.jsonl
+embedding_cache/

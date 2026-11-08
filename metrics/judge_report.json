@@ -1,0 +1,36 @@
+{
+  "schema_version": "kuku-judge-output-1.0.0",
+  "engine": "llm_judge.py",
+  "prompt_version": "kuku-judge-v1.0.0",
+  "provider": "C:\\llama-cpp\\Kwaipilot_KAT-Coder-V2.5-Dev-Q4_K_M.gguf",
+  "config": {
+    "temperature": 0.0,
+    "max_output_tokens": 2048,
+    "repair_attempts": 2,
+    "include_retrieval_metadata": false,
+    "blind": true
+  },
+  "totals": {
+    "judged_now": 84,
+    "ok": 84,
+    "cache_hits_in_second_pass": 83,
+    "failed": 0,
+    "prompt_tokens": 436320,
+    "completion_tokens": 87799,
+    "latency_seconds": 3750.546,
+    "candidates_in_run": 84,
+    "totals_note": "84 candidates judged across two invocations (83 in pass 1, 1 budget-retry in pass 2); sums computed from per-row usage."
+  },
+  "status_counts": {
+    "ok": 84
+  },
+  "verdict_counts": {
+    "accept": 53,
+    "reject": 31
+  },
+  "weighted_score_mean": 3.429,
+  "notes": [
+    "Rewritten deterministically from judge_results.json after the budget-only retry pass.",
+    "83 candidates judged in pass 1 (1 hard truncation -> failed); the failed candidate re-judged in pass 2 with --max-output-tokens 2048 (no prompt/payload changes)."
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "_rubric": "(informational key, ignored by the scorer) relevant = canonical instance a viewer would instantly name as the category; partial = category present in weakened/adjacent form, or content-overlapping with a stronger ranked entry; not = wrong category for this clip. Precision@K counts relevant+partial as hits, unlabeled as miss.",
+  "_reviewer": "GLM Stage 3 run, after reading full dialogue + staging of every listed candidate (2026-11-08).",
+  "betrayal": {
+    "cand_ep01_t96.2-127.5_91e509": "relevant",
+    "cand_ep01_t21.8-52.0_f0e9f8": "relevant",
+    "cand_ep03_t25.9-56.2_f69611": "partial",
+    "cand_ep03_t13.8-43.3_c177ed": "partial",
+    "cand_ep03_t46.4-76.8_0ca812": "partial",
+    "cand_ep33_t79.6-111.5_8d8c3e": "not",
+    "cand_ep33_t57.4-88.8_682d10": "not",
+    "cand_ep33_t104.5-134.5_ffa17e": "not",
+    "cand_ep33_t34.0-64.2_3334db": "not",
+    "cand_ep33_t69.5-100.0_aedd66": "not"
+  },
+  "shocking_reveal": {
+    "cand_ep35_t83.0-113.0_807f9f": "relevant",
+    "cand_ep35_t71.5-101.0_bfcdc0": "relevant",
+    "cand_ep43_t37.8-68.0_6160cc": "relevant",
+    "cand_ep43_t24.1-54.4_384656": "relevant",
+    "cand_ep11_t84.2-112.8_2f9469": "partial",
+    "cand_ep35_t21.0-49.8_c8a6db": "relevant",
+    "cand_ep35_t59.5-89.8_136674": "relevant",
+    "cand_ep43_t88.6-115.0_00be1a": "relevant",
+    "cand_ep43_t14.2-43.9_3f1399": "relevant",
+    "cand_ep42_t11.2-42.5_a6d08b": "relevant"
+  },
+  "humiliation": {
+    "cand_ep03_t69.9-100.8_d3c524": "not",
+    "cand_ep03_t36.5-66.0_a3c3d6": "relevant",
+    "cand_ep03_t46.4-76.8_0ca812": "relevant",
+    "cand_ep32_t90.1-119.5_3df514": "relevant",
+    "cand_ep47_t105.2-134.0_0492b1": "relevant",
+    "cand_ep01_t86.0-115.7_f27ba8": "relevant",
+    "cand_ep32_t43.4-73.3_62a9bf": "relevant",
+    "cand_ep32_t101.2-131.6_8f579a": "relevant",
+    "cand_ep03_t13.8-43.3_c177ed": "relevant",
+    "cand_ep16_t13.1-44.0_7e2377": "not"
+  },
+  "suspense": {
+    "cand_ep48_t12.6-43.0_6d7608": "relevant",
+    "cand_ep06_t7.2-36.7_74d697": "not",
+    "cand_ep19_t70.9-100.0_b2d302": "relevant",
+    "cand_ep22_t94.5-125.5_47eb32": "relevant",
+    "cand_ep03_t58.3-88.1_f06bc0": "partial",
+    "cand_ep03_t46.4-76.8_0ca812": "partial",
+    "cand_ep19_t61.6-89.5_3a14b4": "relevant",
+    "cand_ep15_t20.0-49.5_ff3ff1": "partial",
+    "cand_ep48_t37.3-66.9_2951ce": "relevant",
+    "cand_ep03_t69.9-100.8_d3c524": "not"
+  },
+  "standalone_dramatic_moment": {
+    "cand_ep02_t69.4-98.2_54b1a5": "relevant",
+    "cand_ep32_t43.4-73.3_62a9bf": "relevant",
+    "cand_ep32_t54.6-84.1_5389b2": "relevant",
+    "cand_ep32_t67.2-97.0_bbaa95": "relevant",
+    "cand_ep32_t90.1-119.5_3df514": "relevant",
+    "cand_ep32_t112.8-142.4_aea2d8": "relevant",
+    "cand_ep31_t70.8-103.3_cc46ef": "relevant",
+    "cand_ep02_t79.2-110.0_62c573": "partial",
+    "cand_ep02_t0.0-30.5_3d8e0e": "relevant",
+    "cand_ep32_t16.2-45.5_2b51bd": "relevant"
+  }
+}

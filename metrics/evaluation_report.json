@@ -1,0 +1,439 @@
+{
+  "schema_version": "1.1",
+  "engine_signature": "models/embeddinggemma-2|ASYMMETRIC_SEARCH|768|768",
+  "config": {
+    "top_k_per_category": 10,
+    "best_categories_kept": 3,
+    "embedding": {
+      "model_id": "models/embeddinggemma-2",
+      "dimension": 768,
+      "native_dimension": 768,
+      "truncate_dim": null,
+      "dtype": "float32",
+      "device": "cpu",
+      "batch_size": 8,
+      "text_only": true,
+      "max_chars_per_text": 4000
+    },
+    "categories": [
+      "betrayal",
+      "shocking_reveal",
+      "revenge",
+      "humiliation",
+      "threat",
+      "confession",
+      "romantic_tension",
+      "suspense",
+      "unexpected_entrance",
+      "emotional_confrontation",
+      "strong_opening_hook",
+      "unresolved_cliffhanger",
+      "standalone_dramatic_moment"
+    ]
+  },
+  "cache": {
+    "documents": {
+      "total_texts": 399,
+      "cache_hits": 399,
+      "encoded_now": 0,
+      "cache_entries": 824
+    },
+    "categories": {
+      "total_texts": 13,
+      "cache_hits": 13,
+      "encoded_now": 0,
+      "cache_entries": 824
+    }
+  },
+  "runtime_seconds": {
+    "document_text_build": 0.006,
+    "embed_candidates": 0.007,
+    "embed_categories": 0.0,
+    "retrieve": 0.065,
+    "similarity_matrix": 0.0,
+    "strategy_comparison": 0.123
+  },
+  "memory": {
+    "rss_peak_bytes_before": 81661952,
+    "rss_peak_bytes_after": 81661952
+  },
+  "category_statistics": {
+    "score_distributions": [
+      {
+        "category_id": "betrayal",
+        "min": 0.574298,
+        "p10": 0.595976,
+        "p25": 0.608178,
+        "median": 0.618465,
+        "p75": 0.632079,
+        "p90": 0.64417,
+        "max": 0.665824,
+        "mean": 0.619621,
+        "std": 0.018304
+      },
+      {
+        "category_id": "shocking_reveal",
+        "min": 0.608155,
+        "p10": 0.631581,
+        "p25": 0.64286,
+        "median": 0.652913,
+        "p75": 0.665936,
+        "p90": 0.679998,
+        "max": 0.732316,
+        "mean": 0.655125,
+        "std": 0.018695
+      },
+      {
+        "category_id": "revenge",
+        "min": 0.5622,
+        "p10": 0.602858,
+        "p25": 0.614674,
+        "median": 0.626205,
+        "p75": 0.638047,
+        "p90": 0.650829,
+        "max": 0.668393,
+        "mean": 0.625892,
+        "std": 0.018229
+      },
+      {
+        "category_id": "humiliation",
+        "min": 0.5705,
+        "p10": 0.607417,
+        "p25": 0.617523,
+        "median": 0.630588,
+        "p75": 0.648094,
+        "p90": 0.661105,
+        "max": 0.688084,
+        "mean": 0.63222,
+        "std": 0.021528
+      },
+      {
+        "category_id": "threat",
+        "min": 0.570049,
+        "p10": 0.596839,
+        "p25": 0.608929,
+        "median": 0.619476,
+        "p75": 0.631757,
+        "p90": 0.645545,
+        "max": 0.6745,
+        "mean": 0.620186,
+        "std": 0.01847
+      },
+      {
+        "category_id": "confession",
+        "min": 0.584003,
+        "p10": 0.616322,
+        "p25": 0.624353,
+        "median": 0.632247,
+        "p75": 0.642992,
+        "p90": 0.650386,
+        "max": 0.670245,
+        "mean": 0.632939,
+        "std": 0.013879
+      },
+      {
+        "category_id": "romantic_tension",
+        "min": 0.578996,
+        "p10": 0.613166,
+        "p25": 0.623901,
+        "median": 0.634842,
+        "p75": 0.649091,
+        "p90": 0.65873,
+        "max": 0.683325,
+        "mean": 0.635734,
+        "std": 0.018259
+      },
+      {
+        "category_id": "suspense",
+        "min": 0.590157,
+        "p10": 0.613821,
+        "p25": 0.628228,
+        "median": 0.642385,
+        "p75": 0.654661,
+        "p90": 0.665758,
+        "max": 0.691687,
+        "mean": 0.640858,
+        "std": 0.019988
+      },
+      {
+        "category_id": "unexpected_entrance",
+        "min": 0.604702,
+        "p10": 0.634813,
+        "p25": 0.645065,
+        "median": 0.655934,
+        "p75": 0.664822,
+        "p90": 0.674558,
+        "max": 0.708822,
+        "mean": 0.65508,
+        "std": 0.016348
+      },
+      {
+        "category_id": "emotional_confrontation",
+        "min": 0.602965,
+        "p10": 0.622306,
+        "p25": 0.633106,
+        "median": 0.644861,
+        "p75": 0.657617,
+        "p90": 0.66593,
+        "max": 0.688429,
+        "mean": 0.644495,
+        "std": 0.01717
+      },
+      {
+        "category_id": "strong_opening_hook",
+        "min": 0.601246,
+        "p10": 0.633457,
+        "p25": 0.643252,
+        "median": 0.652554,
+        "p75": 0.66448,
+        "p90": 0.675109,
+        "max": 0.703553,
+        "mean": 0.653557,
+        "std": 0.016768
+      },
+      {
+        "category_id": "unresolved_cliffhanger",
+        "min": 0.602786,
+        "p10": 0.6224,
+        "p25": 0.634088,
+        "median": 0.645575,
+        "p75": 0.657576,
+        "p90": 0.668398,
+        "max": 0.697039,
+        "mean": 0.645962,
+        "std": 0.017007
+      },
+      {
+        "category_id": "standalone_dramatic_moment",
+        "min": 0.634156,
+        "p10": 0.650782,
+        "p25": 0.661872,
+        "median": 0.676703,
+        "p75": 0.689336,
+        "p90": 0.699826,
+        "max": 0.726104,
+        "mean": 0.676331,
+        "std": 0.018827
+      }
+    ],
+    "retrieval_stats": {
+      "top_k_per_category": 10,
+      "category_count": 13,
+      "retrieval_slots": 130,
+      "distinct_candidates_retrieved": 84,
+      "duplicate_slots_merged": 46,
+      "corpus_size": 399,
+      "corpus_coverage_fraction": 0.2105,
+      "hits_histogram": {
+        "1": 57,
+        "2": 18,
+        "3": 4,
+        "4": 2,
+        "5": 1,
+        "6": 2
+      }
+    },
+    "recall_sweep": [
+      {
+        "top_k_per_category": 3,
+        "distinct_candidates": 27,
+        "corpus_coverage_fraction": 0.0677,
+        "candidates_in_multiple_categories": 8
+      },
+      {
+        "top_k_per_category": 5,
+        "distinct_candidates": 42,
+        "corpus_coverage_fraction": 0.1053,
+        "candidates_in_multiple_categories": 16,
+        "jaccard_vs_previous_k": 0.6429
+      },
+      {
+        "top_k_per_category": 10,
+        "distinct_candidates": 84,
+        "corpus_coverage_fraction": 0.2105,
+        "candidates_in_multiple_categories": 27,
+        "jaccard_vs_previous_k": 0.5
+      },
+      {
+        "top_k_per_category": 15,
+        "distinct_candidates": 107,
+        "corpus_coverage_fraction": 0.2682,
+        "candidates_in_multiple_categories": 50,
+        "jaccard_vs_previous_k": 0.785
+      },
+      {
+        "top_k_per_category": 20,
+        "distinct_candidates": 124,
+        "corpus_coverage_fraction": 0.3108,
+        "candidates_in_multiple_categories": 67,
+        "jaccard_vs_previous_k": 0.8629
+      },
+      {
+        "top_k_per_category": 30,
+        "distinct_candidates": 168,
+        "corpus_coverage_fraction": 0.4211,
+        "candidates_in_multiple_categories": 91,
+        "jaccard_vs_previous_k": 0.7381
+      },
+      {
+        "top_k_per_category": 50,
+        "distinct_candidates": 228,
+        "corpus_coverage_fraction": 0.5714,
+        "candidates_in_multiple_categories": 147,
+        "jaccard_vs_previous_k": 0.7368
+      }
+    ],
+    "manual_review": {
+      "labels_file": "retrieval_output/manual_eval_labels.json",
+      "categories": {
+        "betrayal": {
+          "precision": {
+            "precision_at_5": 0.4,
+            "precision_at_10": 0.5
+          },
+          "ratings": {
+            "cand_ep33_t79.6-111.5_8d8c3e": "not",
+            "cand_ep33_t57.4-88.8_682d10": "not",
+            "cand_ep01_t96.2-127.5_91e509": "relevant",
+            "cand_ep33_t104.5-134.5_ffa17e": "not",
+            "cand_ep01_t21.8-52.0_f0e9f8": "relevant",
+            "cand_ep33_t34.0-64.2_3334db": "not",
+            "cand_ep03_t25.9-56.2_f69611": "partial",
+            "cand_ep33_t69.5-100.0_aedd66": "not",
+            "cand_ep03_t13.8-43.3_c177ed": "partial",
+            "cand_ep03_t46.4-76.8_0ca812": "partial"
+          }
+        },
+        "shocking_reveal": {
+          "precision": {
+            "precision_at_5": 1.0,
+            "precision_at_10": 1.0
+          },
+          "ratings": {
+            "cand_ep35_t83.0-113.0_807f9f": "relevant",
+            "cand_ep35_t71.5-101.0_bfcdc0": "relevant",
+            "cand_ep43_t37.8-68.0_6160cc": "relevant",
+            "cand_ep43_t24.1-54.4_384656": "relevant",
+            "cand_ep11_t84.2-112.8_2f9469": "partial",
+            "cand_ep35_t21.0-49.8_c8a6db": "relevant",
+            "cand_ep35_t59.5-89.8_136674": "relevant",
+            "cand_ep43_t88.6-115.0_00be1a": "relevant",
+            "cand_ep43_t14.2-43.9_3f1399": "relevant",
+            "cand_ep42_t11.2-42.5_a6d08b": "relevant"
+          }
+        },
+        "humiliation": {
+          "precision": {
+            "precision_at_5": 0.8,
+            "precision_at_10": 0.8
+          },
+          "ratings": {
+            "cand_ep03_t69.9-100.8_d3c524": "not",
+            "cand_ep03_t36.5-66.0_a3c3d6": "relevant",
+            "cand_ep03_t46.4-76.8_0ca812": "relevant",
+            "cand_ep32_t90.1-119.5_3df514": "relevant",
+            "cand_ep47_t105.2-134.0_0492b1": "relevant",
+            "cand_ep01_t86.0-115.7_f27ba8": "relevant",
+            "cand_ep32_t43.4-73.3_62a9bf": "relevant",
+            "cand_ep32_t101.2-131.6_8f579a": "relevant",
+            "cand_ep03_t13.8-43.3_c177ed": "relevant",
+            "cand_ep16_t13.1-44.0_7e2377": "not"
+          }
+        },
+        "suspense": {
+          "precision": {
+            "precision_at_5": 0.8,
+            "precision_at_10": 0.8
+          },
+          "ratings": {
+            "cand_ep48_t12.6-43.0_6d7608": "relevant",
+            "cand_ep06_t7.2-36.7_74d697": "not",
+            "cand_ep19_t70.9-100.0_b2d302": "relevant",
+            "cand_ep22_t94.5-125.5_47eb32": "relevant",
+            "cand_ep03_t58.3-88.1_f06bc0": "partial",
+            "cand_ep03_t46.4-76.8_0ca812": "partial",
+            "cand_ep19_t61.6-89.5_3a14b4": "relevant",
+            "cand_ep15_t20.0-49.5_ff3ff1": "partial",
+            "cand_ep48_t37.3-66.9_2951ce": "relevant",
+            "cand_ep03_t69.9-100.8_d3c524": "not"
+          }
+        },
+        "standalone_dramatic_moment": {
+          "precision": {
+            "precision_at_5": 1.0,
+            "precision_at_10": 1.0
+          },
+          "ratings": {
+            "cand_ep02_t69.4-98.2_54b1a5": "relevant",
+            "cand_ep32_t43.4-73.3_62a9bf": "relevant",
+            "cand_ep32_t54.6-84.1_5389b2": "relevant",
+            "cand_ep32_t67.2-97.0_bbaa95": "relevant",
+            "cand_ep32_t90.1-119.5_3df514": "relevant",
+            "cand_ep32_t112.8-142.4_aea2d8": "relevant",
+            "cand_ep31_t70.8-103.3_cc46ef": "relevant",
+            "cand_ep02_t79.2-110.0_62c573": "partial",
+            "cand_ep02_t0.0-30.5_3d8e0e": "relevant",
+            "cand_ep32_t16.2-45.5_2b51bd": "relevant"
+          }
+        }
+      }
+    }
+  },
+  "strategy_comparison": {
+    "engine_signature": "models/embeddinggemma-2|SYMMETRIC_SIMILARITY|768|768",
+    "agreement_top_k": [
+      {
+        "category_id": "betrayal",
+        "jaccard_at_top10": 0.1111
+      },
+      {
+        "category_id": "shocking_reveal",
+        "jaccard_at_top10": 0.4286
+      },
+      {
+        "category_id": "revenge",
+        "jaccard_at_top10": 0.1111
+      },
+      {
+        "category_id": "humiliation",
+        "jaccard_at_top10": 0.1111
+      },
+      {
+        "category_id": "threat",
+        "jaccard_at_top10": 0.5385
+      },
+      {
+        "category_id": "confession",
+        "jaccard_at_top10": 0.1111
+      },
+      {
+        "category_id": "romantic_tension",
+        "jaccard_at_top10": 0.1111
+      },
+      {
+        "category_id": "suspense",
+        "jaccard_at_top10": 0.0
+      },
+      {
+        "category_id": "unexpected_entrance",
+        "jaccard_at_top10": 0.25
+      },
+      {
+        "category_id": "emotional_confrontation",
+        "jaccard_at_top10": 0.1765
+      },
+      {
+        "category_id": "strong_opening_hook",
+        "jaccard_at_top10": 0.1111
+      },
+      {
+        "category_id": "unresolved_cliffhanger",
+        "jaccard_at_top10": 0.0
+      },
+      {
+        "category_id": "standalone_dramatic_moment",
+        "jaccard_at_top10": 0.3333
+      }
+    ]
+  }
+}

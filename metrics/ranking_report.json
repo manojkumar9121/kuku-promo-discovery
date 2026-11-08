@@ -1,0 +1,679 @@
+{
+  "schema_version": "kuku-rank-report-1.0.0",
+  "verdict_statistics": {
+    "accepted": 53,
+    "rejected": 31,
+    "failed": 0,
+    "rejection_reason_histogram": {
+      "no_cliffhanger": 20,
+      "weak_opening": 16,
+      "needs_prior_knowledge": 10,
+      "not_promotional_moment": 9,
+      "weak_emotional_impact": 6,
+      "incoherent_narrative": 5
+    }
+  },
+  "score_statistics": {
+    "n_judged_ok": 84,
+    "mean": 3.429,
+    "median": 3.55,
+    "p10": 2.595,
+    "p90": 4.2,
+    "min": 1.95,
+    "max": 4.4,
+    "dimension_means": {
+      "opening_hook": 3.417,
+      "cliffhanger": 3.274,
+      "standalone_clarity": 3.06,
+      "narrative_progression": 3.69,
+      "emotional_impact": 3.94
+    }
+  },
+  "diversity_summary": {
+    "featured_total": 49,
+    "featured_distinct_arcs": 41,
+    "featured_distinct_episodes": 19,
+    "reserve_total": 4
+  },
+  "arc_statistics": [
+    {
+      "arc_key": "11:coerced_restraint",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "11:framed_thief_reveal",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "11:home_invasion_confrontation",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "11:home_invasion_ransom",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "11:planted_evidence_reveal",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "12:sadistic_ultimatum_sacrifice",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "13:sacrificial_crawl",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "15:garden_defiance",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "16:coerced_confession_reveal",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "16:confession_betrayal_reveal",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "16:garden_defense_interrogation",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "18:fire_escape_ledger_conflict",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "18:fire_escape_ledger_rescue",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "18:home_arson_reckoning",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "18:home_destroyed_vow",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "19:secret_reconnaissance_vow",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "1:altar_abandonment",
+      "featured_count": 2
+    },
+    {
+      "arc_key": "1:altar_betrayal_revelation",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "24:coerced_testimony_subversion",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "2:altar_abandonment",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "2:altar_indictment",
+      "featured_count": 2
+    },
+    {
+      "arc_key": "31:torture_escalation",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "32:dungeon_defiance",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "32:dungeon_irony_peak",
+      "featured_count": 2
+    },
+    {
+      "arc_key": "32:dungeon_reckoning",
+      "featured_count": 2
+    },
+    {
+      "arc_key": "32:dungeon_vindication",
+      "featured_count": 2
+    },
+    {
+      "arc_key": "33:coerced_testimony",
+      "featured_count": 2
+    },
+    {
+      "arc_key": "34:coerced_testimony",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "3:altar_betrayal_and_exile",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "3:public_ejection_rescue_intervention",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "3:public_ejection_rescued_by_stranger",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "3:rescue_intervention",
+      "featured_count": 2
+    },
+    {
+      "arc_key": "3:rescue_proposal",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "41:wedding_assault",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "42:usurper_confrontation",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "43:authority_reversal",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "43:treason_reveal",
+      "featured_count": 2
+    },
+    {
+      "arc_key": "43:treason_reveal_and_escape_blocked",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "5:defiant_protection",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "5:public_humiliation_and_defiance",
+      "featured_count": 1
+    },
+    {
+      "arc_key": "5:public_humiliation_rescue",
+      "featured_count": 1
+    }
+  ],
+  "episode_statistics": [
+    {
+      "episode_number": 1,
+      "featured_count": 3
+    },
+    {
+      "episode_number": 2,
+      "featured_count": 3
+    },
+    {
+      "episode_number": 3,
+      "featured_count": 6
+    },
+    {
+      "episode_number": 5,
+      "featured_count": 3
+    },
+    {
+      "episode_number": 11,
+      "featured_count": 5
+    },
+    {
+      "episode_number": 12,
+      "featured_count": 1
+    },
+    {
+      "episode_number": 13,
+      "featured_count": 1
+    },
+    {
+      "episode_number": 15,
+      "featured_count": 1
+    },
+    {
+      "episode_number": 16,
+      "featured_count": 3
+    },
+    {
+      "episode_number": 18,
+      "featured_count": 4
+    },
+    {
+      "episode_number": 19,
+      "featured_count": 1
+    },
+    {
+      "episode_number": 24,
+      "featured_count": 1
+    },
+    {
+      "episode_number": 31,
+      "featured_count": 1
+    },
+    {
+      "episode_number": 32,
+      "featured_count": 7
+    },
+    {
+      "episode_number": 33,
+      "featured_count": 2
+    },
+    {
+      "episode_number": 34,
+      "featured_count": 1
+    },
+    {
+      "episode_number": 41,
+      "featured_count": 1
+    },
+    {
+      "episode_number": 42,
+      "featured_count": 1
+    },
+    {
+      "episode_number": 43,
+      "featured_count": 4
+    }
+  ],
+  "near_duplicate_clusters": [
+    {
+      "cluster_id": "cluster-01",
+      "episode_number": 32,
+      "observed_arc": "dungeon_irony_peak",
+      "head_candidate_id": "cand_ep32_t112.8-142.4_aea2d8",
+      "member_candidate_ids": [
+        "cand_ep32_t112.8-142.4_aea2d8",
+        "cand_ep32_t101.2-131.6_8f579a",
+        "cand_ep32_t90.1-119.5_3df514"
+      ],
+      "member_windows": [
+        "01:52.80→02:22.40",
+        "01:41.20→02:11.60",
+        "01:30.10→01:59.50"
+      ],
+      "note": "Near-identical cut windows or identical arc tag on an overlapping moment — recommend at most the head."
+    },
+    {
+      "cluster_id": "cluster-02",
+      "episode_number": 33,
+      "observed_arc": "coerced_testimony",
+      "head_candidate_id": "cand_ep33_t57.4-88.8_682d10",
+      "member_candidate_ids": [
+        "cand_ep33_t57.4-88.8_682d10",
+        "cand_ep33_t69.5-100.0_aedd66"
+      ],
+      "member_windows": [
+        "00:57.40→01:28.80",
+        "01:09.50→01:40.00"
+      ],
+      "note": "Near-identical cut windows or identical arc tag on an overlapping moment — recommend at most the head."
+    },
+    {
+      "cluster_id": "cluster-03",
+      "episode_number": 2,
+      "observed_arc": "altar_indictment",
+      "head_candidate_id": "cand_ep02_t69.4-98.2_54b1a5",
+      "member_candidate_ids": [
+        "cand_ep02_t69.4-98.2_54b1a5",
+        "cand_ep02_t79.2-110.0_62c573"
+      ],
+      "member_windows": [
+        "01:09.40→01:38.20",
+        "01:19.20→01:50.00"
+      ],
+      "note": "Near-identical cut windows or identical arc tag on an overlapping moment — recommend at most the head."
+    },
+    {
+      "cluster_id": "cluster-04",
+      "episode_number": 3,
+      "observed_arc": "rescue_intervention",
+      "head_candidate_id": "cand_ep03_t69.9-100.8_d3c524",
+      "member_candidate_ids": [
+        "cand_ep03_t69.9-100.8_d3c524",
+        "cand_ep03_t81.8-112.5_1671f3",
+        "cand_ep03_t58.3-88.1_f06bc0"
+      ],
+      "member_windows": [
+        "01:09.90→01:40.80",
+        "01:21.80→01:52.50",
+        "00:58.30→01:28.10"
+      ],
+      "note": "Near-identical cut windows or identical arc tag on an overlapping moment — recommend at most the head."
+    },
+    {
+      "cluster_id": "cluster-05",
+      "episode_number": 32,
+      "observed_arc": "dungeon_vindication",
+      "head_candidate_id": "cand_ep32_t67.2-97.0_bbaa95",
+      "member_candidate_ids": [
+        "cand_ep32_t67.2-97.0_bbaa95",
+        "cand_ep32_t54.6-84.1_5389b2"
+      ],
+      "member_windows": [
+        "01:07.20→01:37.00",
+        "00:54.60→01:24.10"
+      ],
+      "note": "Near-identical cut windows or identical arc tag on an overlapping moment — recommend at most the head."
+    },
+    {
+      "cluster_id": "cluster-06",
+      "episode_number": 43,
+      "observed_arc": "treason_reveal",
+      "head_candidate_id": "cand_ep43_t24.1-54.4_384656",
+      "member_candidate_ids": [
+        "cand_ep43_t24.1-54.4_384656",
+        "cand_ep43_t37.8-68.0_6160cc"
+      ],
+      "member_windows": [
+        "00:24.10→00:54.40",
+        "00:37.80→01:08.00"
+      ],
+      "note": "Near-identical cut windows or identical arc tag on an overlapping moment — recommend at most the head."
+    }
+  ],
+  "embedding_vs_judge": {
+    "population": 84,
+    "spearman_rho": 0.0439,
+    "jaccard_top_k": {
+      "top_10": {
+        "jaccard": 0.0526,
+        "judge_only": [
+          "cand_ep01_t70.6-101.5_39a710",
+          "cand_ep01_t96.2-127.5_91e509",
+          "cand_ep02_t0.0-30.5_3d8e0e",
+          "cand_ep03_t119.8-145.8_b5273b",
+          "cand_ep11_t33.0-63.5_dee113",
+          "cand_ep11_t72.1-102.0_492362",
+          "cand_ep11_t84.2-112.8_2f9469",
+          "cand_ep12_t57.3-87.2_fb29da",
+          "cand_ep33_t104.5-134.5_ffa17e"
+        ],
+        "embed_only": [
+          "cand_ep02_t69.4-98.2_54b1a5",
+          "cand_ep02_t79.2-110.0_62c573",
+          "cand_ep31_t70.8-103.3_cc46ef",
+          "cand_ep32_t43.4-73.3_62a9bf",
+          "cand_ep32_t54.6-84.1_5389b2",
+          "cand_ep32_t67.2-97.0_bbaa95",
+          "cand_ep32_t90.1-119.5_3df514",
+          "cand_ep35_t71.5-101.0_bfcdc0",
+          "cand_ep35_t83.0-113.0_807f9f"
+        ]
+      },
+      "top_20": {
+        "jaccard": 0.1111,
+        "judge_only": [
+          "cand_ep01_t70.6-101.5_39a710",
+          "cand_ep01_t96.2-127.5_91e509",
+          "cand_ep03_t119.8-145.8_b5273b",
+          "cand_ep03_t69.9-100.8_d3c524",
+          "cand_ep05_t55.5-85.5_0693f5",
+          "cand_ep11_t33.0-63.5_dee113",
+          "cand_ep11_t58.0-87.5_d383a5",
+          "cand_ep11_t72.1-102.0_492362",
+          "cand_ep11_t84.2-112.8_2f9469",
+          "cand_ep12_t57.3-87.2_fb29da",
+          "cand_ep16_t13.1-44.0_7e2377",
+          "cand_ep16_t25.8-55.2_4315ab",
+          "cand_ep16_t48.8-78.8_96aa87",
+          "cand_ep18_t56.5-86.5_decf5e",
+          "cand_ep33_t104.5-134.5_ffa17e",
+          "cand_ep33_t57.4-88.8_682d10"
+        ],
+        "embed_only": [
+          "cand_ep01_t86.0-115.7_f27ba8",
+          "cand_ep02_t79.2-110.0_62c573",
+          "cand_ep03_t25.9-56.2_f69611",
+          "cand_ep14_t35.8-66.0_84fb9f",
+          "cand_ep31_t61.5-91.2_cf74e2",
+          "cand_ep31_t70.8-103.3_cc46ef",
+          "cand_ep32_t101.2-131.6_8f579a",
+          "cand_ep32_t16.2-45.5_2b51bd",
+          "cand_ep32_t3.8-33.5_068923",
+          "cand_ep32_t43.4-73.3_62a9bf",
+          "cand_ep32_t54.6-84.1_5389b2",
+          "cand_ep32_t67.2-97.0_bbaa95",
+          "cand_ep32_t90.1-119.5_3df514",
+          "cand_ep35_t71.5-101.0_bfcdc0",
+          "cand_ep35_t83.0-113.0_807f9f",
+          "cand_ep43_t37.8-68.0_6160cc"
+        ]
+      }
+    },
+    "embedding_order_top10": [
+      "cand_ep35_t83.0-113.0_807f9f",
+      "cand_ep02_t69.4-98.2_54b1a5",
+      "cand_ep32_t43.4-73.3_62a9bf",
+      "cand_ep32_t54.6-84.1_5389b2",
+      "cand_ep32_t67.2-97.0_bbaa95",
+      "cand_ep32_t90.1-119.5_3df514",
+      "cand_ep32_t112.8-142.4_aea2d8",
+      "cand_ep31_t70.8-103.3_cc46ef",
+      "cand_ep35_t71.5-101.0_bfcdc0",
+      "cand_ep02_t79.2-110.0_62c573"
+    ],
+    "judge_order_top10": [
+      "cand_ep01_t70.6-101.5_39a710",
+      "cand_ep02_t0.0-30.5_3d8e0e",
+      "cand_ep11_t33.0-63.5_dee113",
+      "cand_ep01_t96.2-127.5_91e509",
+      "cand_ep03_t119.8-145.8_b5273b",
+      "cand_ep11_t72.1-102.0_492362",
+      "cand_ep11_t84.2-112.8_2f9469",
+      "cand_ep12_t57.3-87.2_fb29da",
+      "cand_ep32_t112.8-142.4_aea2d8",
+      "cand_ep33_t104.5-134.5_ffa17e"
+    ],
+    "largest_disagreements": [
+      {
+        "candidate_id": "cand_ep35_t83.0-113.0_807f9f",
+        "judge_rank": 73,
+        "embedding_rank": 1,
+        "rank_delta_judge_minus_embedding": 72,
+        "judge_weighted_score": 2.75,
+        "embedding_best_category_score": 0.732316,
+        "judge_verdict": "reject"
+      },
+      {
+        "candidate_id": "cand_ep31_t70.8-103.3_cc46ef",
+        "judge_rank": 80,
+        "embedding_rank": 8,
+        "rank_delta_judge_minus_embedding": 72,
+        "judge_weighted_score": 2.25,
+        "embedding_best_category_score": 0.718046,
+        "judge_verdict": "reject"
+      },
+      {
+        "candidate_id": "cand_ep01_t70.6-101.5_39a710",
+        "judge_rank": 1,
+        "embedding_rank": 70,
+        "rank_delta_judge_minus_embedding": -69,
+        "judge_weighted_score": 4.4,
+        "embedding_best_category_score": 0.688485,
+        "judge_verdict": "accept"
+      },
+      {
+        "candidate_id": "cand_ep14_t35.8-66.0_84fb9f",
+        "judge_rank": 81,
+        "embedding_rank": 14,
+        "rank_delta_judge_minus_embedding": 67,
+        "judge_weighted_score": 2.1,
+        "embedding_best_category_score": 0.711858,
+        "judge_verdict": "reject"
+      },
+      {
+        "candidate_id": "cand_ep16_t48.8-78.8_96aa87",
+        "judge_rank": 19,
+        "embedding_rank": 83,
+        "rank_delta_judge_minus_embedding": -64,
+        "judge_weighted_score": 4.05,
+        "embedding_best_category_score": 0.674884,
+        "judge_verdict": "accept"
+      },
+      {
+        "candidate_id": "cand_ep24_t66.2-92.0_87686c",
+        "judge_rank": 21,
+        "embedding_rank": 84,
+        "rank_delta_judge_minus_embedding": -63,
+        "judge_weighted_score": 4.05,
+        "embedding_best_category_score": 0.674005,
+        "judge_verdict": "accept"
+      },
+      {
+        "candidate_id": "cand_ep32_t54.6-84.1_5389b2",
+        "judge_rank": 64,
+        "embedding_rank": 4,
+        "rank_delta_judge_minus_embedding": 60,
+        "judge_weighted_score": 3.05,
+        "embedding_best_category_score": 0.724666,
+        "judge_verdict": "accept"
+      },
+      {
+        "candidate_id": "cand_ep33_t104.5-134.5_ffa17e",
+        "judge_rank": 10,
+        "embedding_rank": 69,
+        "rank_delta_judge_minus_embedding": -59,
+        "judge_weighted_score": 4.2,
+        "embedding_best_category_score": 0.690037,
+        "judge_verdict": "accept"
+      },
+      {
+        "candidate_id": "cand_ep35_t71.5-101.0_bfcdc0",
+        "judge_rank": 67,
+        "embedding_rank": 9,
+        "rank_delta_judge_minus_embedding": 58,
+        "judge_weighted_score": 2.95,
+        "embedding_best_category_score": 0.716776,
+        "judge_verdict": "reject"
+      },
+      {
+        "candidate_id": "cand_ep11_t33.0-63.5_dee113",
+        "judge_rank": 3,
+        "embedding_rank": 60,
+        "rank_delta_judge_minus_embedding": -57,
+        "judge_weighted_score": 4.25,
+        "embedding_best_category_score": 0.693735,
+        "judge_verdict": "accept"
+      },
+      {
+        "candidate_id": "cand_ep18_t56.5-86.5_decf5e",
+        "judge_rank": 20,
+        "embedding_rank": 77,
+        "rank_delta_judge_minus_embedding": -57,
+        "judge_weighted_score": 4.05,
+        "embedding_best_category_score": 0.683127,
+        "judge_verdict": "accept"
+      },
+      {
+        "candidate_id": "cand_ep12_t57.3-87.2_fb29da",
+        "judge_rank": 8,
+        "embedding_rank": 63,
+        "rank_delta_judge_minus_embedding": -55,
+        "judge_weighted_score": 4.2,
+        "embedding_best_category_score": 0.692505,
+        "judge_verdict": "accept"
+      },
+      {
+        "candidate_id": "cand_ep03_t25.9-56.2_f69611",
+        "judge_rank": 70,
+        "embedding_rank": 16,
+        "rank_delta_judge_minus_embedding": 54,
+        "judge_weighted_score": 2.75,
+        "embedding_best_category_score": 0.7105,
+        "judge_verdict": "reject"
+      },
+      {
+        "candidate_id": "cand_ep15_t20.0-49.5_ff3ff1",
+        "judge_rank": 27,
+        "embedding_rank": 79,
+        "rank_delta_judge_minus_embedding": -52,
+        "judge_weighted_score": 3.75,
+        "embedding_best_category_score": 0.682331,
+        "judge_verdict": "accept"
+      },
+      {
+        "candidate_id": "cand_ep31_t61.5-91.2_cf74e2",
+        "judge_rank": 63,
+        "embedding_rank": 13,
+        "rank_delta_judge_minus_embedding": 50,
+        "judge_weighted_score": 3.05,
+        "embedding_best_category_score": 0.713101,
+        "judge_verdict": "reject"
+      },
+      {
+        "candidate_id": "cand_ep35_t21.0-49.8_c8a6db",
+        "judge_rank": 77,
+        "embedding_rank": 29,
+        "rank_delta_judge_minus_embedding": 48,
+        "judge_weighted_score": 2.4,
+        "embedding_best_category_score": 0.702506,
+        "judge_verdict": "reject"
+      },
+      {
+        "candidate_id": "cand_ep06_t7.2-36.7_74d697",
+        "judge_rank": 83,
+        "embedding_rank": 35,
+        "rank_delta_judge_minus_embedding": 48,
+        "judge_weighted_score": 1.95,
+        "embedding_best_category_score": 0.699702,
+        "judge_verdict": "reject"
+      },
+      {
+        "candidate_id": "cand_ep05_t55.5-85.5_0693f5",
+        "judge_rank": 15,
+        "embedding_rank": 62,
+        "rank_delta_judge_minus_embedding": -47,
+        "judge_weighted_score": 4.05,
+        "embedding_best_category_score": 0.692899,
+        "judge_verdict": "accept"
+      },
+      {
+        "candidate_id": "cand_ep03_t119.8-145.8_b5273b",
+        "judge_rank": 5,
+        "embedding_rank": 50,
+        "rank_delta_judge_minus_embedding": -45,
+        "judge_weighted_score": 4.2,
+        "embedding_best_category_score": 0.695704,
+        "judge_verdict": "accept"
+      },
+      {
+        "candidate_id": "cand_ep33_t57.4-88.8_682d10",
+        "judge_rank": 11,
+        "embedding_rank": 55,
+        "rank_delta_judge_minus_embedding": -44,
+        "judge_weighted_score": 4.2,
+        "embedding_best_category_score": 0.694731,
+        "judge_verdict": "accept"
+      }
+    ]
+  },
+  "human_review": {
+    "labels_file": "judge_output/judge_human_sample.json",
+    "precision": {
+      "precision_at_5": {
+        "hits": 5,
+        "of_top": 5,
+        "value": 1.0
+      },
+      "precision_at_10": {
+        "hits": 10,
+        "of_top": 10,
+        "value": 1.0
+      },
+      "precision_at_20": {
+        "hits": 20,
+        "of_top": 20,
+        "value": 1.0
+      }
+    },
+    "top20_verdict_histogram": {
+      "strong": 16,
+      "usable": 4
+    },
+    "note": "Independent review; no prompt tuning was performed against these labels."
+  }
+}

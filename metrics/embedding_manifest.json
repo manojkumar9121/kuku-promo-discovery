@@ -1,0 +1,15 @@
+{
+  "path": "retrieval_output/candidate_embeddings.npz",
+  "engine_signature": "models/embeddinggemma-2|ASYMMETRIC_SEARCH|768|768",
+  "dimensions": {
+    "candidates": [
+      399,
+      768
+    ],
+    "categories": [
+      13,
+      768
+    ]
+  },
+  "note": "Vectors are float32 and L2-normalized; candidate order matches candidate_ids."
+}

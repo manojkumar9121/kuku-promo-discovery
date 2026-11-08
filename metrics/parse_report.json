@@ -1,0 +1,42 @@
+{
+  "input": "/home/yuki/Documents/KuKu FM/I Married a Broken Soldier. He was a Duke-scripts (2).zip",
+  "files_discovered": 50,
+  "episodes_parsed": 50,
+  "episodes_with_number": 50,
+  "scenes_parsed": 100,
+  "events_parsed": 3727,
+  "event_type_counts": {
+    "action": 372,
+    "camera": 1754,
+    "dialogue": 1487,
+    "sound_fx": 114
+  },
+  "source_order_preserved": true,
+  "timeline_event_ids_emitted": true,
+  "speaker_aliases_applied": {
+    "LADY CATHERINE": "CATHERINE",
+    "LADY CLARISSA": "CLARISSA",
+    "LADY JULIANA": "JULIANA",
+    "THE PRIEST": "PRIEST"
+  },
+  "speaker_alias_provenance": {
+    "LADY CATHERINE": "inferred",
+    "LADY CLARISSA": "inferred",
+    "LADY JULIANA": "inferred",
+    "THE PRIEST": "inferred"
+  },
+  "warnings_count": 1,
+  "warning_code_counts": {
+    "EVENT_OUTSIDE_SCENE": 1
+  },
+  "warnings": [
+    {
+      "code": "EVENT_OUTSIDE_SCENE",
+      "message": "Event 00:41.50-00:42.80 falls outside scene 00:00.00-00:42.50.",
+      "source_file": "I Married a Broken Soldier. He was a Duke/episode-022-Episode 1678575.txt",
+      "scene_number": 1,
+      "line_number": 102,
+      "raw_text": "SOUND FX:"
+    }
+  ]
+}
