@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kuku — Problem 1 — AI Promo Discovery, Solution</title>
+<style>
+@page { size: A4; margin: 13mm 13mm 16mm 13mm;
+        @bottom-center { content: "Kuku — Problem 1 — AI Promo Discovery"; font-size: 6.2pt; color:#888; }
+        @bottom-right { content: "Page " counter(page) " / 2"; font-size: 6.2pt; color:#888; } }
+* { box-sizing: border-box; }
+body { font-family: Georgia, "Times New Roman", serif; font-size: 9.5pt; line-height: 1.27; color: #1a1a1a; margin: 0; }
+h1 { font-size: 18.5pt; margin: 0 0 1pt 0; letter-spacing: -0.35pt; color: #b00d0d; line-height: 1.12; }
+h2 { font-size: 9.8pt; text-transform: uppercase; letter-spacing: 0.85pt; color: #b00d0d;
+     border-bottom: 1px solid #e3bcbc; padding-bottom: 1.5pt; margin: 13pt 0 5pt 0; }
+h3 { font-size: 9.8pt; margin: 5pt 0 1pt 0; color: #2b2b2b; }
+.kicker { font-size: 6.6pt; text-transform: uppercase; letter-spacing: 1.5pt; color: #7a7a7a; }
+.small { font-size: 6.9pt; color: #444; }
+table { border-collapse: collapse; width: 100%; font-size: 7.7pt; margin: 3pt 0 1pt 0; page-break-inside: auto; }
+th { background: #f7ecec; text-align: left; } th, td { border: 0.5pt solid #e2b8b8; padding: 1.5pt 3.5pt; vertical-align: top; }
+code, .mono { font-family: "DejaVu Sans Mono", Consolas, monospace; font-size: 6.4pt; background: #f5f5f5; padding: 0 2px; }
+pre { font-family: "DejaVu Sans Mono", Consolas, monospace; font-size: 6.4pt; white-space: pre-wrap; word-wrap: break-word; background: #fafafa;
+      border: 0.5pt solid #eee; padding: 3pt 5pt; line-height: 1.18; margin: 3pt 0; }
+.fail { color: #8b0000; } .ok { color: #1a6e1a; }
+.cols { column-count: 2; column-gap: 13pt; }
+ol { margin: 1pt 0 1pt 15pt; padding: 0; } li { margin: 1.2pt 0; }
+.lede { font-size: 9.3pt; }
+</style>
+</head>
+<body>
+
+<div class="kicker">Kuku — AI Generalist Assignment · Submission · November 2026</div>
+<h1>Find the Promos: an AI Promo Discovery Engine for Microdramas</h1>
+<div class="small">Problem 1 (“Find the Promos”) · English US pack “I Married a Broken Soldier. He was a Duke” · 50 episodes, timestamped screenplays · free tiers only · prototype &amp; all raw outputs linked in the submission form</div>
+
+<h2>1 · Why this problem, where I drew the line</h2>
+<div class="cols">
+<p>Microdrama retention is won or lost on a 20–60 s promo: one cut that stops the scroll, sells the stakes, and makes a cold viewer need the next episode. Today editors pick those by hand, show by show, week by week — a repeatable, judgment-heavy job worth an AI first pass.</p>
+<p>I scoped to <i>selection only</i>: find candidate clips and rank them by ad-worthiness. No editing, music or overlays — none of that was asked for. <b>Assumption (assignment fine print):</b> the pack is a show Kuku will release; screenplay timestamps are ground truth; the 1,487 dialogue events are the natural promo anchors; multi-segment promos are <i>schema-supported but not benchmarked</i> (all shipped candidates are contiguous).</p>
+</div>
+
+<h2>2 · The approach — two modes, one funnel</h2>
+<pre>input pack → Parser v2 → Context Builder → Fast Discovery → BLIND LLM Judge → Promo Ranker
+            3,727 events   399 windows      84 union-84    53 accept/84    slate + reserve</pre>
+<p><b>Mode 1 — Fast Discovery (retrieval, high recall).</b> Candidates built from screenplay events, embedded with <code>google/embeddinggemma-2</code> (270M-effective text tower, 768-dim, float32 CPU, text-only load, MRL renormalise-on-truncate). Document side: full chronological dialogue (speakers + deliveries) + camera/action/sound lines, as a titled document. Query side: the model's documented <code>SearchQuery</code> instruction, 13 categories (10 drama + 3 structural). <b>No similarity threshold</b> — an arbitrary cut would discard the boundary cases the judge exists for. Merge-top-K per category, dedup by candidate_id while retaining each candidate's complete similarity row.</p>
+<p><b>Mode 2 — Contextual LLM Judge (selection).</b> A blind judge (staged 34.6B Q4 coder model via local llama.cpp, <code>enable_thinking=false</code>, temp 0.0) sees <i>only</i> the candidate + its ±12 s narrative context and the episode logline/continuity notes — never retrieval scores. Rubric: opening hook 25% · cliffhanger 25% · standalone clarity 20% · narrative progression 15% · emotional impact 15%. <b>Every decisive judgement must cite the payload's real event_ids, machine-checked — invented ids cannot survive validation.</b> Outright rejection is a first-class result; 31/84 were rejected. Judge and evaluator are the same stage (no extra tuning); the Kuku interview can connect stronger models by swapping one provider line.</p>
+
+<h2>3 · Actual results (raw, honest, reproducible)</h2>
+<table>
+<tr><th>Stage &amp; metric</th><th>Value</th><th>Reading</th></tr>
+<tr><td>Parser → candidates</td><td>50 eps / 100 scenes / 3,727 events → 399 windows</td><td>1 warning kept verbatim (ep 22 sound-FX overflow); 4–15 windows/episode</td></tr>
+<tr><td>Fast Discovery union</td><td>84/399 (21.1%) from 130 slots; 46 duplicates merged</td><td>recall-first; nothing below-K is dropped silently</td></tr>
+<tr><td>Judge pass</td><td>84/84 ok, 53 accept / 31 reject; mean 3.43; median 3.55; max 4.4</td><td>strictest axis: standalone_clarity (3.06) — the paid-ad gate</td></tr>
+<tr><td>Judge vs embedding rank</td><td>Spearman ρ ≈ <b>0.04</b> · Jaccard@10 = <b>5.3%</b></td><td>two orthogonal lenses; result kept <i>because</i> they disagree</td></tr>
+<tr><td><b>Human-reviewed precision (top-20, independent sample)</b></td><td>Precision@5 = <b>1.00</b> · @10 = <b>1.00</b> · @20 = <b>1.00</b></td><td>33-pair sample; 16 strong + 4 usable in judged top-20; 30/33 judge↔reviewer agreement</td></tr>
+<tr><td>Failure the judge <i>caught</i></td><td>Ep35 <code>807f9f</code> backstory monologue (embed rank #1)</td><td><span class="fail">rejected</span> — dead-air opening; slow-burn monologues are never ads</td></tr>
+<tr><td>Cluster the judge <i>trusts communally</i></td><td>Ep1 wedding-abandonment arc</td><td>top-ranked slate (rank 1 <code>39a710</code> → 4.4; rank 4 <code>91e509</code> → 4.2)</td></tr>
+<tr><td>Ep33 coerced-testimony</td><td>embed ranked #1; judge kept some, rejected others</td><td>menace-as-promo can work — judge stays comparatively permissive when standalone is clean</td></tr>
+<tr><td>Final ranking</td><td>49-slate → top-25 (featured cap 2 per (episode,arc)); no arc holds more than 2 slots</td><td>6 near-duplicate clusters collapsed to their strongest head</td></tr>
+<tr><td>Compute on this 8-core CPU</td><td>~65 s judge wall (84×46 s), 4.1 s warm cache re-run; 454,662 + 91,399 tokens</td><td>submission kept an LLM; judge calls ≈ free locally, paid tier would cost ≈ one $0.15 run</td></tr>
+</table>
+
+<h2>4 · Where it fails (the five lenses: quality checking)</h2>
+<ol>
+<li><b>Coercion’s edge cases:</b> ep33 coercion beats passed the threshold by judgment while similar ones did not; standalone clarity is the swing factor and it's genuinely borderline — a catalog buyer may disagree with both my reviewer and the judge. Recorded, not hidden.</li>
+<li><b>Cliffhanger policy vs taste:</b> judge rejected every clip ending on calm resolutions — correct for ad testing, but a warm brand might prefer them. Two “usable-but-rejected” (ep47 revenge-labor, ep48 Catherine's threat) are flagged as reviewer-contested.</li>
+<li><b>Arc-cap ≠ comedy:</b> cap is policy, not proof; the reserve list preserves the displaced, ready to reinstate with one flag.</li>
+<li><b>One model, one prompt:</b> results are <code>kuku-judge-v1.0.0</code> + one 34.6B coder model; an instruct chat model may reshuffle mid-tier verdicts at the interview (one-line provider swap, no pipeline change).</li>
+<li><b>Structural near-dupes survive:</b> normalised video clips at the 4fps layer are invisible to us; two hooks from the same arc class will still sometimes co-qualify. Diversity handles it on average, not per pair.</li>
+</ol>
+
+<h2>5 · Scale &amp; how to run</h2>
+<div class="cols">
+<p><b>Every show, every week.</b> Parser+builder are cache-linear in the number of episodes; retrieval re-embeds only changed candidates (content-addressed cache validated by a 147-test suite); judge calls run once per changed candidate; a fresh 50-show sweep is a 45–90 min batch, and re-screening interactively is ~4 s warm. Multi-episode/cross-episode promos are supported in the representation (schema has per-segment windows and a <code>segments</code> array) and are the first thing I'd enable next, behind a new validation pass.</p>
+<p><b>Commands:</b></p>
+<pre>python script_parser.py --input pack.zip --output parsed_output/
+python context_builder.py --input parsed_output/parsed_episodes.json
+python candidate_retriever.py --candidates context_output/candidates.json
+python llm_judge.py --retrieval-results retrieval_output/fast_discovery_results.json
+python promo_ranker.py && python final_recommendations.py</pre>
+<p class="small">Python 3.10+ stdlib + numpy; ~2 GB model download (HF, once); no external API keys. Raw outputs, rejection log, human labels ship with the form (Kuku-confidential, <u>not</u> public git).</p>
+</div>
+
+<h2>6 · Why I trust it (validation &amp; AI-usage honesty)</h2>
+<p>Determinism is guarded by unit/integration tests per module, byte-compared regression runs, and fixed seeds; the LLM pass runs once and its output is validated, not nudged. AI was used end-to-end as an engineering pair (opencode + agent tooling on Python 3.14). <b>Where the AI got it wrong, measurably:</b> EmbeddingGemma-2 rated ep33's <i>coerced-testimony</i> scenes the #1 “betrayal” material; both the blind LLM judge and my independent human pass re-ranked/rejected them — had we trusted retrieval alone, the slate would have opened with scenes no buyer wants. Second mistake: the first judge pass crashed at 15 min, discarding in-memory judge state — fixed by streaming a per-candidate cache to disk, which made the submission's own retry survivable.</p>
+<p class="small">A <code>models/</code> folder of 1.55 GB is intentionally excluded from the repo; it is reproducible with one command (README §models). Parser v2, Context Builder v1 and Stage-3 retrieval remain untouched by this submission — frozen exactly as approved at Stages 1–3.</p>
+
+</body>
+</html>
