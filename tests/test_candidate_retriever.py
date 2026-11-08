@@ -297,7 +297,7 @@ class ManualLabelTests(unittest.TestCase):
         labels = {
             "cat_a": {"c0": "relevant", "c1": "not", "c2": "partial", "c3": "relevant", "c5": "not"}
         }
-        with tempfile.TemporaryDirectory(dir="/tmp/opencode") as tmp:
+        with tempfile.TemporaryDirectory(dir=tempfile.gettempdir()) as tmp:
             path = Path(tmp) / "labels.json"
             path.write_text(json.dumps(labels), encoding="utf-8")
             report = cr.apply_manual_labels(self._payload(), path, top_ks=(5, 10))
@@ -311,7 +311,7 @@ class ManualLabelTests(unittest.TestCase):
 
     def test_unreviewed_marks_rating_gaps(self):
         labels = {"cat_a": {"c0": "relevant"}}
-        with tempfile.TemporaryDirectory(dir="/tmp/opencode") as tmp:
+        with tempfile.TemporaryDirectory(dir=tempfile.gettempdir()) as tmp:
             path = Path(tmp) / "labels.json"
             path.write_text(json.dumps(labels), encoding="utf-8")
             report = cr.apply_manual_labels(self._payload(), path, top_ks=(5, 10))
@@ -320,11 +320,11 @@ class ManualLabelTests(unittest.TestCase):
         self.assertEqual(ratings.get("c4"), "unreviewed")  # rank 5 unlabeled
 
     def test_missing_file_returns_none(self):
-        self.assertIsNone(cr.apply_manual_labels(self._payload(), Path("/tmp/opencode/definitely-missing.json")))
+        self.assertIsNone(cr.apply_manual_labels(self._payload(), Path(tempfile.gettempdir()) / "definitely-missing.json"))
 
     def test_unknown_category_label_file_ignored(self):
         labels = {"not_a_category": {"c0": "relevant"}}
-        with tempfile.TemporaryDirectory(dir="/tmp/opencode") as tmp:
+        with tempfile.TemporaryDirectory(dir=tempfile.gettempdir()) as tmp:
             path = Path(tmp) / "labels.json"
             path.write_text(json.dumps(labels), encoding="utf-8")
             self.assertIsNone(cr.apply_manual_labels(self._payload(), path))
@@ -379,21 +379,21 @@ class TimerTests(unittest.TestCase):
 
 class LoadCandidatesTests(unittest.TestCase):
     def test_wrapper_payload(self):
-        with tempfile.TemporaryDirectory(dir="/tmp/opencode") as tmp:
+        with tempfile.TemporaryDirectory(dir=tempfile.gettempdir()) as tmp:
             path = Path(tmp) / "candidates.json"
             path.write_text(json.dumps({"candidates": [make_candidate("c0")]}), encoding="utf-8")
             loaded = cr.load_candidates(path)
         self.assertEqual(loaded[0]["candidate_id"], "c0")
 
     def test_bare_list(self):
-        with tempfile.TemporaryDirectory(dir="/tmp/opencode") as tmp:
+        with tempfile.TemporaryDirectory(dir=tempfile.gettempdir()) as tmp:
             path = Path(tmp) / "candidates.json"
             path.write_text(json.dumps([make_candidate("c9")]), encoding="utf-8")
             loaded = cr.load_candidates(path)
         self.assertEqual(loaded[0]["candidate_id"], "c9")
 
     def test_invalid_payload_raises(self):
-        with tempfile.TemporaryDirectory(dir="/tmp/opencode") as tmp:
+        with tempfile.TemporaryDirectory(dir=tempfile.gettempdir()) as tmp:
             path = Path(tmp) / "candidates.json"
             path.write_text(json.dumps({"other": 1}), encoding="utf-8")
             with self.assertRaises(ValueError):
@@ -404,7 +404,7 @@ class CliEndToEndTests(unittest.TestCase):
     """Full CLI run headless (offline provider) asserting the output contract."""
 
     def setUp(self):
-        self.tmp_root = Path(tempfile.mkdtemp(prefix="kuku_cli_", dir="/tmp/opencode"))
+        self.tmp_root = Path(tempfile.mkdtemp(prefix="kuku_cli_", dir=tempfile.gettempdir()))
         self.candidates_path = self.tmp_root / "candidates.json"
         corpus = [make_candidate(f"c{i:02d}", batch=i) for i in range(12)]
         # Wrapper payload like context_output/candidates.json.
@@ -530,7 +530,7 @@ class CacheReuseAcrossRunsTests(unittest.TestCase):
     """Second CLI run against the same output dir must not re-encode anything."""
 
     def test_second_run_hits_cache(self):
-        tmp_root = Path(tempfile.mkdtemp(prefix="kuku_cache_", dir="/tmp/opencode"))
+        tmp_root = Path(tempfile.mkdtemp(prefix="kuku_cache_", dir=tempfile.gettempdir()))
         try:
             candidates_path = tmp_root / "candidates.json"
             corpus = [make_candidate(f"c{i}", batch=i) for i in range(4)]

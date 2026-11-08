@@ -19,7 +19,7 @@ from pathlib import Path
 
 import promo_ranker as pr
 
-TMP = Path("/tmp/opencode/kuku_ranker_tests")
+TMP = Path(tempfile.gettempdir()) / "kuku_ranker_tests"
 
 
 def make_row(candidate_id: str, *, episode: int = 1, arc: str = "altar_abandonment",
@@ -216,12 +216,12 @@ class HumanOverlayTests(unittest.TestCase):
 
     def test_missing_labels_returns_none(self):
         rows = self._rows()
-        self.assertIsNone(pr.build_human_review_overlay(rows, Path("/tmp/opencode/no-such-labels.json")))
+        self.assertIsNone(pr.build_human_review_overlay(rows, Path(tempfile.gettempdir()) / "no-such-labels.json"))
 
     def test_precision_counts_strong_and_usable(self):
         rows = self._rows()
         labels = {"p-a": "strong", "p-b": "usable", "p-c": "weak", "p-d": "usable", "p-e": "unusable"}
-        with tempfile.TemporaryDirectory(dir="/tmp/opencode") as tmp:
+        with tempfile.TemporaryDirectory(dir=tempfile.gettempdir()) as tmp:
             path = Path(tmp) / "labels.json"
             path.write_text(json.dumps(labels), encoding="utf-8")
             overlay = pr.build_human_review_overlay(rows, path, top_ks=(2, 5))

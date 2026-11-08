@@ -19,6 +19,7 @@ from pathlib import Path
 import numpy as np
 
 import embedding_engine as ee
+import tempfile
 
 REPO_DIR = Path(__file__).resolve().parent
 LOCAL_MODEL_DIR = REPO_DIR / "models" / "embeddinggemma-2"
@@ -129,7 +130,7 @@ class MathHelperTests(unittest.TestCase):
 
 class EmbeddingCacheTests(unittest.TestCase):
     def setUp(self):
-        self.cache_root = Path("/tmp/opencode/kuku_cache_tests")
+        self.cache_root = Path(tempfile.gettempdir()) / "kuku_cache_tests"
         shutil.rmtree(self.cache_root, ignore_errors=True)
         self.engine_token = "test-token|ASYMMETRIC_SEARCH|float32|768"
 
@@ -159,7 +160,7 @@ class EmbeddingCacheTests(unittest.TestCase):
 
 class EmbeddingEngineTests(unittest.TestCase):
     def setUp(self):
-        self.cache_root = Path("/tmp/opencode/kuku_engine_tests")
+        self.cache_root = Path(tempfile.gettempdir()) / "kuku_engine_tests"
         shutil.rmtree(self.cache_root, ignore_errors=True)
 
     def tearDown(self):

@@ -5,8 +5,7 @@ artifacts to submit in the form, and what each contains.
 
 ## Link 1 — GitHub repository (code + docs, no pack-derived text)
 
-Subtree: `kuku-promo-discovery/` (git repo, `main`, single commit
-"45e15b9 — Problem 1 (Find the Promos)…").
+Subtree: `kuku-promo-discovery/` (git repo, branch `main`; tip updated for these final corrections).
 
 Contains: full source, 198-test offline suite, the 2-page solution PDF
 (`docs/Kuku_Solution.pdf`), architecture + operations docs, metrics-only JSON
@@ -27,11 +26,11 @@ Complete, unedited outputs from the final run on the supplied 50-episode pack:
                          manual_eval_labels.json (Stage-3 50-pair human labels),
                          top10_per_category.md
 /judge_output/           judge_results.json/.jsonl (raw_model_output for all 84),
-                         promo_ranking.json, final_recommendations.json/.md,
+                         promo_ranking.json, promo_ranking.md,
                          ranking_report.json, judge_report.json,
                          judge_human_sample.json (Stage-4 33-pair human labels),
                          judge_cache.jsonl
-/final/                  final_recommendations.md (the slate; printable)
+/final/                  final_recommendations.json + final_recommendations.md (the slate; printable)
 + README.md (this manifest) + Kuku_Solution.pdf (same 2 pages)
 ```
 

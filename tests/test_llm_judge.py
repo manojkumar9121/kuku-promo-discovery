@@ -21,7 +21,7 @@ import judge_prompt
 import judge_schema as js
 import llm_judge as lj
 
-TMP = Path("/tmp/opencode/kuku_judge_tests")
+TMP = Path(tempfile.gettempdir()) / "kuku_judge_tests"
 
 
 def make_candidate(candidate_id: str, *, episode: int = 1, arc_seed: str = "x") -> dict:

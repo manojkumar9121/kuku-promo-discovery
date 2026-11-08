@@ -55,8 +55,8 @@ ol { margin: 1pt 0 1pt 15pt; padding: 0; } li { margin: 1.2pt 0; }
 <tr><td>Failure the judge <i>caught</i></td><td>Ep35 <code>807f9f</code> backstory monologue (embed rank #1)</td><td><span class="fail">rejected</span> — dead-air opening; slow-burn monologues are never ads</td></tr>
 <tr><td>Cluster the judge <i>trusts communally</i></td><td>Ep1 wedding-abandonment arc</td><td>top-ranked slate (rank 1 <code>39a710</code> → 4.4; rank 4 <code>91e509</code> → 4.2)</td></tr>
 <tr><td>Ep33 coerced-testimony</td><td>embed ranked #1; judge kept some, rejected others</td><td>menace-as-promo can work — judge stays comparatively permissive when standalone is clean</td></tr>
-<tr><td>Final ranking</td><td>49-slate → top-25 (featured cap 2 per (episode,arc)); no arc holds more than 2 slots</td><td>6 near-duplicate clusters collapsed to their strongest head</td></tr>
-<tr><td>Compute on this 8-core CPU</td><td>~65 s judge wall (84×46 s), 4.1 s warm cache re-run; 454,662 + 91,399 tokens</td><td>submission kept an LLM; judge calls ≈ free locally, paid tier would cost ≈ one $0.15 run</td></tr>
+<tr><td>Final ranking</td><td>49-slate → top-12 featured + 7 reserve (featured cap 2 per (episode,arc)); no arc holds more than 2 slots</td><td>6 near-duplicate clusters collapsed to their strongest head</td></tr>
+<tr><td>Compute on this 8-core CPU</td><td>~65 minutes accumulated judge latency (≈46 s/candidate), 4.1 s warm cache re-run; 454,662 + 91,399 tokens</td><td>submission kept an LLM; judge calls ≈ free locally, paid tier would cost ≈ one $0.15 run</td></tr>
 </table>
 
 <h2>4 · Where it fails (the five lenses: quality checking)</h2>
@@ -70,7 +70,7 @@ ol { margin: 1pt 0 1pt 15pt; padding: 0; } li { margin: 1.2pt 0; }
 
 <h2>5 · Scale &amp; how to run</h2>
 <div class="cols">
-<p><b>Every show, every week.</b> Parser+builder are cache-linear in the number of episodes; retrieval re-embeds only changed candidates (content-addressed cache validated by a 147-test suite); judge calls run once per changed candidate; a fresh 50-show sweep is a 45–90 min batch, and re-screening interactively is ~4 s warm. Multi-episode/cross-episode promos are supported in the representation (schema has per-segment windows and a <code>segments</code> array) and are the first thing I'd enable next, behind a new validation pass.</p>
+<p><b>Every show, every week.</b> Parser+builder are cache-linear in the number of episodes; retrieval re-embeds only changed candidates (content-addressed cache validated by a 198-test suite); judge calls run once per changed candidate; a fresh 50-episode full-pack run is an ≈2 h batch, and re-screening interactively is ~4 s warm. Multi-episode/cross-episode promos are supported in the representation (schema has per-segment windows and a <code>segments</code> array) and are the first thing I'd enable next, behind a new validation pass.</p>
 <p><b>Commands:</b></p>
 <pre>python script_parser.py --input pack.zip --output parsed_output/
 python context_builder.py --input parsed_output/parsed_episodes.json
